@@ -1,0 +1,750 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@800;900&family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@800;900&family=Inter:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+.app {
+    max-width: 500px;
+    margin: auto;
+    min-height: 100vh;
+    background: white;
+}
+
+header {
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    font-size: 28px;
+}
+
+header p {
+    margin-top: 5px;
+    color: #666;
+}
+
+main {
+    padding: 20px;
+}
+
+button,
+input,
+select {
+    width: 100%;
+    font-size: 16px;
+}
+
+button {
+    padding: 14px;
+    margin-bottom: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.primary-btn {
+    background: #111;
+    color: white;
+}
+
+.secondary-btn {
+    background: #eeeeee;
+    color: #111;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input,
+select {
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+h2 {
+    margin: 25px 0 15px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.ride-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 15px;
+}
+
+.ride-card h3 {
+    margin-bottom: 12px;
+}
+
+.ride-card p {
+    margin: 7px 0;
+    color: #555;
+}
+
+.ride-card button {
+    margin-top: 12px;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.modal-content h3 {
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+
+/* LOGIN SCREEN */
+
+/* LOGIN SCREEN */
+
+.login-screen {
+    min-height: 100vh;
+    background: #0A0A0A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    position: relative;
+}
+
+.login-screen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #FFD000;
+}
+
+
+/* LOGIN CARD */
+
+.login-card {
+    width: 100%;
+    max-width: 380px;
+    background: #181818;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow:
+        0 32px 80px rgba(0, 0, 0, 0.8),
+        0 0 0 1px #2a2a2a;
+
+    padding: 40px 36px;
+    text-align: center;
+    position: relative;
+}
+
+.login-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #FFD000;
+}
+
+
+/* BRAND */
+
+.login-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 28px;
+}
+
+.login-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.login-logo span {
+    font-size: 32px;
+}
+
+.login-logo strong {
+    font-family: 'Outfit', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: #FFD000;
+    letter-spacing: -1px;
+}
+
+.login-brand p {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #777;
+    margin: 0;
+}
+
+
+/* INPUTS */
+
+.login-inputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.login-inputs input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid #2a2a2a;
+    background: #0e0e0e;
+    color: #fff;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+
+    outline: none;
+    box-sizing: border-box;
+
+    transition: border-color 0.2s;
+}
+
+.login-inputs input:focus {
+    border-color: #FFD000;
+}
+
+.login-inputs input::placeholder {
+    color: #666;
+}
+
+
+/* SIGN IN */
+
+.login-signin-btn {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+
+    background: #FFD000;
+    color: #0A0A0A;
+
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+
+    cursor: pointer;
+    letter-spacing: 0.3px;
+
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.login-signin-btn:hover {
+    opacity: 0.92;
+}
+
+
+/* LINKS */
+
+.login-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    margin-top: 28px;
+}
+
+.login-link-btn {
+    width: auto !important;
+
+    background: none !important;
+    border: none !important;
+
+    color: #FFD000;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.login-link-btn:hover {
+    text-decoration: underline;
+}
+
+.create-account-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.create-account-area span {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #555;
+}
+
+
+/* DIVIDER */
+
+.login-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+    margin: 28px 0;
+}
+
+.login-divider div {
+    flex: 1;
+    height: 1px;
+    background: #2a2a2a;
+}
+
+.login-divider span {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: #555;
+}
+
+
+/* MICROSOFT BUTTON */
+
+.microsoft-btn {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border-radius: 12px;
+    border: 1px solid #2a2a2a;
+
+    background: #0e0e0e;
+    color: #ccc;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    box-sizing: border-box;
+}
+
+.microsoft-btn:hover {
+    border-color: #444;
+}
+
+
+/* MICROSOFT LOGO */
+
+.microsoft-logo {
+    display: grid;
+
+    grid-template-columns: 9px 9px;
+    grid-template-rows: 9px 9px;
+
+    gap: 2px;
+}
+
+.microsoft-logo span {
+    display: block;
+    background: #F25022;
+}
+
+.microsoft-logo span:nth-child(2) {
+    background: #7FBA00;
+}
+
+.microsoft-logo span:nth-child(3) {
+    background: #00A4EF;
+}
+
+.microsoft-logo span:nth-child(4) {
+    background: #FFB900;
+}
+
+
+/* LOGIN NOTE */
+
+.login-note {
+    font-family: 'Inter', sans-serif;
+
+    font-size: 11px;
+    color: #444;
+
+    text-align: center;
+
+    margin: 18px 0 0;
+}
+
+
+/* FOOTER */
+
+.site-footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+
+/* PASSWORD VISIBILITY */
+/* PASSWORD VISIBILITY */
+
+.password-field {
+    position: relative;
+    width: 100%;
+}
+
+.password-field input {
+    width: 100%;
+    padding-right: 50px;
+}
+
+.password-field .show-password-btn {
+    position: absolute !important;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: auto !important;
+    height: auto;
+
+    margin: 0 !important;
+    padding: 5px !important;
+
+    border: none;
+    border-radius: 0;
+
+    background: transparent !important;
+    color: #555;
+
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+}
+
+
+
+/* =========================================
+   RIDEZY MAIN APP - FIGMA DESIGN
+   ========================================= */
+
+body {
+    background: #0A0A0A;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+
+
+/* MAIN APP */
+
+.app {
+    max-width: 680px;
+    margin: auto;
+    min-height: 100vh;
+    background: #0A0A0A;
+}
+
+
+/* HEADER */
+
+.app-header {
+    padding: 30px 20px 26px;
+    text-align: center;
+    border-bottom: 1px solid #202020;
+}
+
+.app-header h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    color: #FFD000;
+    letter-spacing: -1px;
+}
+
+.app-header .tagline {
+    margin-top: 10px;
+    color: #777;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+}
+
+
+/* MAIN CONTENT */
+
+.app main {
+    padding: 34px 20px;
+}
+
+
+/* HOME BUTTONS */
+
+.home-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+/* CREATE RIDE BUTTON */
+
+.ride-create-btn {
+    width: 100%;
+    padding: 23px 20px;
+
+    background: #FFD000;
+    color: #0A0A0A;
+
+    border: none;
+    border-radius: 20px;
+
+    font-family: 'Outfit', sans-serif;
+    font-size: 21px;
+    font-weight: 900;
+
+    cursor: pointer;
+    margin: 0;
+
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.ride-create-btn:hover {
+    opacity: 0.92;
+}
+
+.ride-create-btn:active {
+    transform: scale(0.99);
+}
+
+
+/* FIND RIDE BUTTON */
+
+.ride-find-btn {
+    width: 100%;
+    padding: 21px 20px;
+
+    background: #181818;
+    color: #cccccc;
+
+    border: 1px solid #303030;
+    border-radius: 20px;
+
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+
+    cursor: pointer;
+    margin: 0;
+
+    transition: border-color 0.15s ease;
+}
+
+.ride-find-btn:hover {
+    border-color: #555;
+}
+
+
+/* AVAILABLE RIDES */
+
+#ridesSection {
+    margin-top: 38px;
+}
+
+.available-rides-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 0 0 24px;
+
+    font-family: 'Outfit', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+
+    color: #ffffff;
+}
+
+
+/* RIDE COUNT */
+
+.ride-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 32px;
+    height: 32px;
+
+    padding: 0 9px;
+
+    background: #FFD000;
+    color: #0A0A0A;
+
+    border-radius: 50%;
+
+    font-family: 'Outfit', sans-serif;
+    font-size: 17px;
+    font-weight: 900;
+}
+
+
+/* RIDE CARD */
+
+.ride-card {
+    background: #181818;
+
+    border: 1px solid #303030;
+    border-radius: 20px;
+
+    padding: 28px;
+    margin-bottom: 22px;
+
+    box-shadow: none;
+}
+
+
+/* DESTINATION */
+
+.ride-card h3 {
+    margin-bottom: 24px;
+
+    font-family: 'Outfit', sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+
+    color: #FFD000;
+}
+
+
+/* RIDE DETAILS */
+
+.ride-card p {
+    margin: 12px 0;
+
+    color: #b5b5b5;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+
+/* RIDE BUTTON */
+
+.ride-card button {
+    margin-top: 18px;
+}
+
+
+/* JOIN BUTTON */
+
+.ride-card .primary-btn {
+    background: #FFD000;
+    color: #0A0A0A;
+
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+
+    border-radius: 15px;
+}
+
+
+/* LEAVE BUTTON */
+
+.ride-card .secondary-btn {
+    background: #252525;
+    color: #ffffff;
+
+    border: 1px solid #333;
+    border-radius: 15px;
+}
+
+
+/* CANCEL BUTTON */
+
+.ride-card .primary-btn {
+    width: 100%;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .app-header h1 {
+        font-size: 34px;
+    }
+
+    .app main {
+        padding: 28px 16px;
+    }
+
+    .available-rides-title {
+        font-size: 27px;
+    }
+
+    .ride-card {
+        padding: 22px;
+    }
+
+    .ride-card h3 {
+        font-size: 22px;
+    }
+
+}

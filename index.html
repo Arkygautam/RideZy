@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RideZy</title>
+
+    <link rel="stylesheet" href="style.v2.css">
+</head>
+
+<body>
+
+    <!-- LOGIN SCREEN -->
+    <!-- LOGIN SCREEN -->
+<section id="loginSection" class="login-screen">
+
+    <div class="login-card">
+
+        <div class="login-brand">
+            <div class="login-logo">
+                <span>🚕</span>
+                <strong>Ridezy</strong>
+            </div>
+
+            <p>Sign in to continue</p>
+        </div>
+
+
+        <!-- LOGIN INPUTS -->
+
+        <div class="login-inputs">
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Institute Email"
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+            >
+
+            <button
+                class="login-signin-btn"
+                onclick="loginWithEmail()"
+            >
+                Sign In
+            </button>
+
+        </div>
+
+
+        <!-- LINKS -->
+
+        <div class="login-links">
+
+            <button
+                type="button"
+                onclick="resendVerificationEmail()"
+                class="login-link-btn"
+            >
+                Resend verification email
+            </button>
+
+
+            <div class="create-account-area">
+
+                <span>Don't have an account?</span>
+
+                <button
+                    type="button"
+                    onclick="showSignup()"
+                    class="login-link-btn"
+                >
+                    Create Account
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- OR DIVIDER -->
+
+        <div class="login-divider">
+
+            <div></div>
+
+            <span>OR</span>
+
+            <div></div>
+
+        </div>
+
+
+        <!-- MICROSOFT -->
+
+        <button
+            class="microsoft-btn"
+            onclick="loginWithMicrosoft()"
+        >
+
+            <span class="microsoft-logo">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </span>
+
+            Continue with Microsoft
+
+        </button>
+
+
+        <!-- NOTE -->
+
+        <p class="login-note">
+            Only verified institute students can access Ridezy.
+        </p>
+
+    </div>
+
+</section>
+
+
+    <!-- PROFILE SETUP -->
+
+    <section id="profileSection" class="login-screen hidden">
+
+        <div class="login-card">
+
+            <h1>Complete Your Profile</h1>
+
+            <p>
+                We need your phone number to help you coordinate rides.
+            </p>
+
+            <input
+                type="tel"
+                id="phoneNumber"
+                placeholder="Phone Number"
+                maxlength="10"
+            >
+
+            <button
+                class="primary-btn"
+                onclick="saveProfile()"
+            >
+                Continue
+            </button>
+
+            <p class="login-note">
+                Your phone number will only be used for ride coordination.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SIGNUP SCREEN -->
+
+    <section id="signupSection" class="login-screen hidden">
+
+        <div class="login-card">
+
+            <h1>Create Account</h1>
+
+            <p>Use your IIM Shillong institute email.</p>
+
+            <input
+                type="text"
+                id="signupName"
+                placeholder="Full Name"
+            >
+
+            <input
+                type="email"
+                id="signupEmail"
+                placeholder="Institute Email"
+            >
+
+            <div class="password-field">
+
+                <input
+                    type="password"
+                    id="signupPassword"
+                    placeholder="Password"
+                >
+
+                <button
+                    type="button"
+                    onclick="togglePassword('signupPassword', this)"
+                    class="show-password-btn"
+                >
+                    👁
+                </button>
+
+            </div>
+
+
+            <div class="password-field">
+
+                <input
+                    type="password"
+                    id="signupConfirmPassword"
+                    placeholder="Confirm Password"
+                >
+
+                <button
+                    type="button"
+                    onclick="togglePassword('signupConfirmPassword', this)"
+                    class="show-password-btn"
+                >
+                    👁
+                </button>
+
+            </div>
+
+
+            <button
+                class="primary-btn"
+                onclick="createAccount()"
+            >
+                Create Account
+            </button>
+
+
+            <p class="login-note">
+
+                Already have an account?
+
+                <button
+                    type="button"
+                    onclick="showLogin()"
+                    style="background:none; border:none; color:#007bff; cursor:pointer; padding:0;"
+                >
+                    Sign In
+                </button>
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MAIN APP -->
+
+    <div class="app">
+
+        <header>
+            <h1>
+                🚕 <span>RideZy</span></h1>
+
+            <p class="tagline">
+                A platform to book rides and travel together.
+            </p>
+
+        </header>
+
+
+        <main>
+
+            <!-- HOME BUTTONS -->
+
+            <div class="home-actions">
+
+    <button
+        id="createRideBtn"
+        class="ride-create-btn"
+    >
+        + Create a Ride
+    </button>
+
+    <button
+        id="findRideBtn"
+        class="ride-find-btn"
+    >
+        🔎 Find a Ride
+    </button>
+
+</div>
+
+
+            <!-- CREATE RIDE SECTION -->
+
+            <section
+                id="createSection"
+                class="hidden"
+            >
+
+                <h2>Create a Ride</h2>
+
+                <label>Destination</label>
+
+                <select id="destination">
+
+                    <option value="Nongthymmai">
+                        Nongthymmai
+                    </option>
+
+                    <option value="Police Bazaar">
+                        Police Bazaar
+                    </option>
+
+                    <option value="Guwahati Airport">
+                        Guwahati Airport
+                    </option>
+
+                    <option value="Campus">
+                        Campus
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+                <input
+    type="text"
+    id="otherDestination"
+    placeholder="Enter your destination"
+    class="hidden"
+>
+
+
+                <label>Date</label>
+
+                <input
+                    type="date"
+                    id="rideDate"
+                >
+
+
+                <label>Departure Time</label>
+
+                <input
+                    type="time"
+                    id="rideTime"
+                >
+
+
+                <label>Pickup Location</label>
+
+                <input
+                    type="text"
+                    id="pickup"
+                    placeholder="e.g. Main Gate"
+                >
+
+
+                <label>Total Seats</label>
+
+                <input
+                    type="number"
+                    id="seats"
+                    min="1"
+                    max="6"
+                    value="4"
+                >
+
+
+                <button
+                    id="submitRide"
+                    class="primary-btn"
+                >
+                    Create Ride
+                </button>
+
+            </section>
+
+
+            <!-- AVAILABLE RIDES -->
+
+            <section
+                id="ridesSection"
+                class="hidden"
+            >
+
+                <h2 class="available-rides-title">
+    Available Rides
+    <span id="rideCount" class="ride-count">0</span>
+</h2>
+
+                <div id="ridesContainer"></div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- JOIN CONFIRMATION POPUP -->
+
+    <div
+        id="joinModal"
+        class="modal hidden"
+    >
+
+        <div class="modal-content">
+
+            <h3>Join this ride?</h3>
+
+            <p>
+                Are you sure you want to join this ride?
+            </p>
+
+
+            <button
+                id="confirmJoin"
+                class="primary-btn"
+            >
+                Yes, Join
+            </button>
+
+
+            <button
+                id="cancelJoin"
+                class="secondary-btn"
+            >
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- FIREBASE -->
+
+    <script src="https://www.gstatic.com/firebasejs/12.8.0/firebase-app-compat.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/12.8.0/firebase-auth-compat.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore-compat.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/12.8.0/firebase-messaging-compat.js"></script>
+
+
+    <script>
+
+        const firebaseConfig = {
+
+            apiKey: "AIzaSyBNyjHFpg8SNz2_ttuCj1sJ3C7tGrU1IEQ",
+
+            authDomain: "iim-shillong-rideshare.firebaseapp.com",
+
+            projectId: "iim-shillong-rideshare",
+
+            storageBucket: "iim-shillong-rideshare.firebasestorage.app",
+
+            messagingSenderId: "322292821053",
+
+            appId: "1:322292821053:web:c4a4a0e469d50ae971ce54",
+
+            measurementId: "G-21LXDDDRL9"
+
+        };
+
+
+        firebase.initializeApp(firebaseConfig);
+
+        const db = firebase.firestore();
+
+        const auth = firebase.auth();
+
+        const messaging = firebase.messaging();
+
+    </script>
+
+
+    <script src="app.v2.js"></script>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <p>
+            Built by - <strong>Akar Gautam</strong> |
+            Roll No. <strong>2026PGP286</strong>
+        </p>
+
+    </footer>
+
+</body>
+</html>
