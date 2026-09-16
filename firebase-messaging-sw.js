@@ -2,7 +2,7 @@ importScripts("https://www.gstatic.com/firebasejs/12.8.0/firebase-app-compat.js"
 importScripts("https://www.gstatic.com/firebasejs/12.8.0/firebase-messaging-compat.js");
 
 firebase.initializeApp({
-     apiKey: "AIzaSyBNyjHFpg8SNz2_ttuCj1sJ3C7tGrU1IEQ",
+     apiKey: "x",
     authDomain: "iim-shillong-rideshare.firebaseapp.com",
     projectId: "iim-shillong-rideshare",
     storageBucket: "iim-shillong-rideshare.firebasestorage.app",
