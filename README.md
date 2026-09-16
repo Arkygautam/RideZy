@@ -2,7 +2,8 @@
 
 > A real-time campus ride-sharing platform built for IIM Shillong students.
 
-Live Demo:(https://ridezy-app.web.app/)
+Live Demo: https://ridezy-app.web.app/
+
 
 ## 🚀 Problem
 
@@ -24,29 +25,41 @@ RideZy provides a centralized platform for discovering and coordinating campus r
 
 ## 📸 Screenshots
 
-### Login & Authentication
+### 🔐 Login & Authentication
 
-![RideZy Login](screenshots/login.png)
+![RideZy Login](screenshots/Login_Page.png)
 
-### Ride Dashboard
+### 🏠 Dashboard
 
-![RideZy Dashboard](screenshots/dashboard.png)
+![RideZy Dashboard](screenshots/DashBoard.png)
 
-### Create a Ride
+### 🚕 Create a Ride
 
-![Create Ride](screenshots/create-ride.png)
+![Create Ride](screenshots/Create_Ride.png)
 
-### Available Rides
+### 🔎 Available Rides
 
-![Available Rides](screenshots/available-rides.png)
+![Available Rides](screenshots/Available_Rides.png)
 
-### Join Ride
+### 🤝 Join a Ride
 
-![Join Ride](screenshots/join-ride.png)
+![Join Ride](screenshots/Join_Ride.png)
 
-### Notifications
+### 👥 Passenger Joined
 
-![Notifications](screenshots/notifications.png)
+![Passenger Joined](screenshots/Passenger_Joined.jpeg)
+
+### ↩️ Passenger Left
+
+![Passenger Left](screenshots/Passenger_Left.jpeg)
+
+### ❌ Ride Cancelled
+
+![Ride Cancelled](screenshots/Ride_Cancelled.jpeg)
+
+### 🚕 Ride Created
+
+![Ride Created](screenshots/Ride_Created.jpeg)
 
 ## ⚙️ Engineering Highlights
 
@@ -54,7 +67,7 @@ RideZy provides a centralized platform for discovering and coordinating campus r
 
 RideZy uses Firestore transactions when students join or leave rides.
 
-This ensures seat counts remain consistent even when multiple users interact with the same ride.
+This ensures seat counts remain consistent when multiple users interact with the same ride.
 
 Join:
 `Validate Ride → Check Seats → Increment bookedSeats → Create Joiner`
@@ -89,7 +102,18 @@ RideZy/
 ├── style.v2.css
 ├── firebase.json
 ├── firebase-messaging-sw.js
-└── 404.html
+├── 404.html
+├── README.md
+└── screenshots/
+    ├── Login_Page.png
+    ├── DashBoard.png
+    ├── Create_Ride.png
+    ├── Available_Rides.png
+    ├── Join_Ride.png
+    ├── Passenger_Joined.jpeg
+    ├── Passenger_Left.jpeg
+    ├── Ride_Cancelled.jpeg
+    └── Ride_Created.jpeg
 ```
 
 ## 🔄 Ride Lifecycle
